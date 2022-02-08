@@ -62,6 +62,6 @@ int main() {
   assert(ischargeRateWithinThreshold(0.8) == true);
   assert(ischargeRateWithinThreshold(0.9) == false);
     
-  testBatteryIsOk(batteryIsOk(25, 70, 0.7),true);
-  testBatteryIsOk(batteryIsOk(50, 85, 0),false);
+  testBatteryIsOK(batteryIsOk(25, 70, 0.7),true);
+  testBatteryIsOK(batteryIsOk(50, 85, 0),false);
 }
