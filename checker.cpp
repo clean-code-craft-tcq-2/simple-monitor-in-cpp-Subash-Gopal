@@ -39,28 +39,28 @@ bool ischargeRateWithinThreshold(float chargeRate)
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
   //The below functions nearly do the same thing, this functions can be clubed to Avoid duplication
-  return (isTemperatureInRange(temperature) && isSocInRange(soc) && ischargeRateWithinThreshold(chargeRate))
+  return (isTemperatureInRange(temperature) && isSocInRange(soc) && ischargeRateWithinThreshold(chargeRate));
 }
 
 void testbatteryIsOK(bool actualBatteryRangeStatus,bool expectedBatteryRangeStatus){
-    assert(actualBatteryRangeStatus == expectedBatteryRangeStatus)
+    assert(actualBatteryRangeStatus == expectedBatteryRangeStatus);
 }
 
 int main() {
-  assert(isTemperatureInRange(-10) == false)
-  assert(isTemperatureInRange(0) == true)
-  assert(isTemperatureInRange(45) == true)
-  assert(isTemperatureInRange(46) == false)
+  assert(isTemperatureInRange(-10) == false);
+  assert(isTemperatureInRange(0) == true);
+  assert(isTemperatureInRange(45) == true);
+  assert(isTemperatureInRange(46) == false);
   
-  assert(isSocInRange(19) == false)
-  assert(isSocInRange(20) == true)
-  assert(isSocInRange(80) == true)
-  assert(isSocInRange(81) == false)
+  assert(isSocInRange(19) == false);
+  assert(isSocInRange(20) == true);
+  assert(isSocInRange(80) == true);
+  assert(isSocInRange(81) == false);
     
-  assert(ischargeRateWithinThreshold(-10) == false)  
-  assert(ischargeRateWithinThreshold(0) == true)
-  assert(ischargeRateWithinThreshold(0.8) == true)
-  assert(ischargeRateWithinThreshold(0.9) == false)
+  assert(ischargeRateWithinThreshold(-10) == false);
+  assert(ischargeRateWithinThreshold(0) == true);
+  assert(ischargeRateWithinThreshold(0.8) == true);
+  assert(ischargeRateWithinThreshold(0.9) == false);
     
   testBatteryIsOk(batteryIsOk(25, 70, 0.7),true);
   testBatteryIsOk(batteryIsOk(50, 85, 0),false);
