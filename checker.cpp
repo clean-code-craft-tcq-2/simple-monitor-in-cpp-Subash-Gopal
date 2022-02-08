@@ -8,7 +8,6 @@ const float SOC_UPPER_BOUND = 80;
 const float SOC_LOWER_BOUND = 20;
 const float CHARGE_RATE_THRESHOLD = 0.8;
 
-
 bool isTemperatureInRange(float temperature)
 {
   if(temperature < TEMPERATURE_LOWER_BOUND || temperature > TEMPERATURE_UPPER_BOUND) {
@@ -38,11 +37,7 @@ bool ischargeRateWithinThreshold(float chargeRate)
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate) {
-  bool isTemperatureInRange = isTemperatureInRange(temperature);
-  bool isSocInRange = isSocInRange(soc);
-  bool ischargeRateWithinThreshold = ischargeRateWithinThreshold(chargeRate);
-  
-  return ((isTemperatureInRange) && (isSocInRange) && (ischargeRateWithinThreshold))
+  return ((isTemperatureInRange(temperature)) && (isSocInRange(soc)) && (ischargeRateWithinThreshold(chargeRate)))
 }
 
 void testbatteryIsOK(bool actualBatteryRangeStatus,bool expectedBatteryRangeStatus){
