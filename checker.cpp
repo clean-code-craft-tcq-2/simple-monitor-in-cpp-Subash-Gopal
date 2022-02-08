@@ -42,7 +42,7 @@ bool batteryIsOk(float temperature, float soc, float chargeRate) {
   return (isTemperatureInRange(temperature) && isSocInRange(soc) && ischargeRateWithinThreshold(chargeRate));
 }
 
-void testbatteryIsOK(bool actualBatteryRangeStatus,bool expectedBatteryRangeStatus){
+void testBatteryIsOK(bool actualBatteryRangeStatus,bool expectedBatteryRangeStatus){
     assert(actualBatteryRangeStatus == expectedBatteryRangeStatus);
 }
 
