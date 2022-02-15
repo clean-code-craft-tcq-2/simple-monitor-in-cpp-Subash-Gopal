@@ -46,22 +46,22 @@ void testBatteryIsOK(bool actualBatteryRangeStatus,bool expectedBatteryRangeStat
     assert(actualBatteryRangeStatus == expectedBatteryRangeStatus);
 }
 
-int main() {
-  assert(isTemperatureInRange(-10) == false);
-  assert(isTemperatureInRange(0) == true);
-  assert(isTemperatureInRange(45) == true);
-  assert(isTemperatureInRange(46) == false);
+// int main() {
+//   assert(isTemperatureInRange(-10) == false);
+//   assert(isTemperatureInRange(0) == true);
+//   assert(isTemperatureInRange(45) == true);
+//   assert(isTemperatureInRange(46) == false);
   
-  assert(isSocInRange(19) == false);
-  assert(isSocInRange(20) == true);
-  assert(isSocInRange(80) == true);
-  assert(isSocInRange(81) == false);
+//   assert(isSocInRange(19) == false);
+//   assert(isSocInRange(20) == true);
+//   assert(isSocInRange(80) == true);
+//   assert(isSocInRange(81) == false);
     
-  assert(ischargeRateWithinThreshold(-10) == false);
-  assert(ischargeRateWithinThreshold(0) == true);
-  assert(ischargeRateWithinThreshold(0.8) == true);
-  assert(ischargeRateWithinThreshold(0.9) == false);
+//   assert(ischargeRateWithinThreshold(-10) == false);
+//   assert(ischargeRateWithinThreshold(0) == true);
+//   assert(ischargeRateWithinThreshold(0.8) == true);
+//   assert(ischargeRateWithinThreshold(0.9) == false);
     
-  testBatteryIsOK(batteryIsOk(25, 70, 0.7),true);
-  testBatteryIsOK(batteryIsOk(50, 85, 0),false);
-}
+//   testBatteryIsOK(batteryIsOk(25, 70, 0.7),true);
+//   testBatteryIsOK(batteryIsOk(50, 85, 0),false);
+// }
