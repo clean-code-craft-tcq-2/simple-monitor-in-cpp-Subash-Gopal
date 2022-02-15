@@ -78,17 +78,17 @@ bool BatteryStatusMonitor::batteryIsOk()
     }
     return true;
 }
-
-int main()
+void testBatteryIsOK()
 {
-
     BatteryStatusMonitor BatteryStatusMonitor;
-
+    assert(false == BatteryStatusMonitor.batteryIsOk()); //Returns false and warns developer to Test When No checks is done
     BatteryStatusMonitor.addBatteryParameters("Temperature", 20, 0, 45, YES_EARLY_WARNING);
     BatteryStatusMonitor.addBatteryParameters("Soc", 25, 20, 80, YES_EARLY_WARNING);
     BatteryStatusMonitor.addBatteryParameters("ChargeRate", 0.5, 0, 0.8, YES_EARLY_WARNING);
+    assert(true == BatteryStatusMonitor.batteryIsOk());
+}
 
-    BatteryStatusMonitor.display();
-
-    BatteryStatusMonitor.batteryIsOk();
+int main()
+{
+    testBatteryIsOK();
 }
