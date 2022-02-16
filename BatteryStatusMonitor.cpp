@@ -56,11 +56,11 @@ bool BatteryStatusMonitor::batteryIsOk()
         {
             if (batteryParameter.getEarlyWarning() == YES_EARLY_WARNING)
             {
-                if (batteryParameter.getParameterValue() < calcLowerBound(batteryParameter.getLowerBound()))
+                if ((batteryParameter.getParameterValue() == calcLowerBound(batteryParameter.getLowerBound()))
                 {
                     cout << batteryParameter.getParameter() << " Warning: Approaching discharge!\n";
                 }
-                else if (batteryParameter.getParameterValue() > calcUpperBound(batteryParameter.getUpperBound()))
+                else if (batteryParameter.getParameterValue() == calcUpperBound(batteryParameter.getUpperBound()))
                 {
                     cout << batteryParameter.getParameter() << " Warning: Approaching charge-peak!\n";
                 }
